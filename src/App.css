@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family:'Ubuntu', sans-serif;
+  background-color: rgb(243, 229, 229);
+}
+
+.primary-btn-container {
+  position: relative;
+}
+
+.primary-btn, .add-btn {
+  display: inline-block;
+  background-color: rgb(35, 36, 37);
+  padding: 0.5rem 0.75rem;
+  border-radius: 1rem;
+  border: 2px solid rgb(243, 229, 229);
+  color: rgb(243, 229, 229);
+  font-size: 1em;
+  font-family:'Ubuntu', sans-serif;
+  transition: 0.5s;
+}
+
+.red {
+  background-color: rgb(250, 55, 55);
+  color: rgb(35, 36, 37);
+  border: 2px solid rgb(35, 36, 37);
+  transition: 0.2s;
+  border-radius: 0;
+}
+
+.primary-btn:hover {
+  cursor: pointer;
+  background-color: rgb(13, 86, 245);
+}
+
+.add-btn:hover {
+  cursor: pointer;
+  background-color: rgb(13, 86, 245);
+  padding-right: 2rem;
+}
+
+.add-btn:after {
+  content: "1";
+  font-weight: 700;
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.add-btn:hover::after {
+  opacity: 1;
+  padding-left: 1rem;
+}
+
+.red:hover {
+  opacity: 0.8;
+  background-color: rgb(226, 15, 15);
+  color: rgb(243, 229, 229);
+  font-size: 1.1em;
+  padding: 0.8rem 1.1rem;
+  cursor: pointer;
+}
+
+.cart-btn:hover {
+  background-image: linear-gradient(to right, rgb(243, 229, 229), rgb(13, 86, 245));
+}
+
+.quantity-adjust-btn {
+  background-color: rgb(243, 229, 229);
+  color: rgb(35, 36, 37);
+  border: 1px solid black;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.5em;
+  transition: 0.5s;
+  font-weight: 800;
+}
+
+.quantity-adjust-btn:hover {
+  cursor: pointer;
+  background-color: rgb(13, 86, 245);
+  color: rgb(243, 229, 229);
+}
+/* Compenents and Modals below */
+
+/* Nav Component */
+.nav_shop {
+  font-size: 2.5em;
+  text-decoration: none;
+  color: rgb(13, 86, 245);
+  font-weight: 800;
+}
+
+.nav_container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: linear-gradient(to right, rgb(243, 229, 229), rgb(13, 86, 245));
+  padding: 1rem 0;
+}
+
+/* Product Component */
+
+.products_container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  background-color: rgb(35, 36, 37);
+  gap: 1rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.products_card {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 30%;
+  border: 2px solid rgb(13, 86, 245);
+  border-radius: 1rem;
+  background-color: white;
+  color: black;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition: all 0.5s;
+}
+
+.products_card:hover {
+  background-color: black;
+  color: rgb(243, 229, 229);
+  box-shadow: 1px 20px 10px rgb(13, 86, 245);
+}
+
+@media screen and (max-width: 600px) {
+  .products_card {
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .products_card {
+    width: 60vw;
+    min-width: 250px;
+  }
+} 
+
+.thumbnail {
+  width: 80%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.thumbnail:hover {
+  cursor: pointer;
+}
+
+.products_details_container {
+  width: 90%;
+}
+
+.products_price {
+  color: rgb(13, 86, 245);
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.products_btn_container {
+  display: flex;
+  gap: .15rem;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+/* Cart component */
+.cart_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(35, 36, 37);
+  width: 100%;
+  min-width: 400px;
+}
+
+.cart_container {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin: 0 auto;
+  width: 60%;
+  border-bottom: 2px solid rgb(35, 36, 37);
+  margin-bottom: 1rem;
+}
+
+.cart_thumbnail {
+  max-width: 20%;
+  min-width: 15%;
+  height: auto;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.thumbnail_container {
+  border-bottom: 1px solid rgb(35, 36, 37);
+}
+
+.cart_total {
+  border: 5px solid rgb(13, 86, 245);
+  padding: 0.5em;
+}
+
+.cart_numItems {
+  margin-top: 0;
+  font-size: 0.8em;
+}
+
+.button_wrapper {
+  display: flex;
+  gap: .25em;
+}
+
+.opacity {
+  opacity: 0.7;
+}
+/* Email Component */
+
+.email-form {
+  border: 2px solid rgb(35, 36, 37);
+  min-width: 400px;
+  text-align: center;
+  margin: 0 auto 2rem auto;
+}
+
+input, textarea {
+  border-radius: 1.2rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgb(35, 36, 37);
+  color: rgb(243, 229, 229);
+  font-weight: 700;
+}
+
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0 0 0 / 80%);
+}
+
+
+.clearCart-overlay-btn-container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 0);
+  background-color: black;
+  opacity: 1;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.products-modal-container {
+  display: flex;
+  max-width: 50%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.modal-thumbnail {
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.products-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(243, 229, 229);
+  color: rgb(13, 86, 245);
+  min-width: 400px;
+  max-width: 50%;
+  max-height: 100vh;
+}
+
+.products-modal-btn { 
+  background-color: rgb(243, 229, 229);
+  color: rgb(35, 36, 37);
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0.2rem;
+  max-width: 10%;
+  border: none;
+}
+
+.products-modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin: 0.2rem auto;
+  align-items: center;
+  border: 2px solid rgb(35, 36, 37);
+  max-width: 50%;
+  border-radius: 1.2rem;
+  padding-top: 0.2rem;
+}
+
+.sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-width: 400px;
+  font-size: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+}
+
+.sticky:hover {
+  opacity: 1;
+  font-size: 2rem;
+}
