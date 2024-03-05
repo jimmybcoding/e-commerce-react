@@ -11,8 +11,9 @@ function App() {
     return (
     <>
         <Nav />
+        <Products />
         <Routes >
-            <Route path= '/e-commerce-react/' element={<Products />}/>
+            <Route path= '/' element={<Products />}/>
             <Route path='cart' element={<Cart />} />
         </Routes>
     </>
