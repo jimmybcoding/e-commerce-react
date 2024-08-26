@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight, faStar, faStarHalfStroke, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faStar as farStar } from  "@fortawesome/free-regular-svg-icons" 
 import { CartContext } from "../context/CartContext";
-import { Link } from "react-router-dom";
 
 function ProductModal({ selectedProduct, isOpen, toggleOpen }) {
 
@@ -80,11 +79,6 @@ const checkIndex = () => {
                   </button>
                   </div>}
             </div>
-          </div>
-          <div className="sticky">
-            <Link to='cart'>
-            <button className="primary-btn">Go to Cart <FontAwesomeIcon icon={faCartShopping}/></button>
-            </Link>
           </div>
         </>)}
     </>
