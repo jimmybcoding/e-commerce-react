@@ -90,10 +90,14 @@ body {
 
 /* Nav Component */
 .nav_shop {
-  font-size: 2.5em;
+  font-size: 3.5em;
   text-decoration: none;
   color: rgb(13, 86, 245);
-  font-weight: 800;
+  font-weight: 500;
+}
+
+.nav_shop:hover {
+  font-weight: 900;
 }
 
 .nav_container {
