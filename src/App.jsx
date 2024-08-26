@@ -3,6 +3,7 @@ import './App.css'
 import { Cart } from './components/Cart';
 import Nav from './components/Nav';
 import Products from './components/Products';
+import GoToCartButton from './utilities/GoToCartButton';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route path= '/' element={<Products />}/>
             <Route path='cart' element={<Cart />} />
         </Routes>
+        <GoToCartButton />
     </>
     );
 }
