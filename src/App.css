@@ -59,12 +59,10 @@ body {
 }
 
 .red:hover {
+  transform: scale(1.1);
   opacity: 0.8;
-  background-color: rgb(226, 15, 15);
-  color: rgb(243, 229, 229);
-  font-size: 1.1em;
-  padding: 0.8rem 1.1rem;
   cursor: pointer;
+  background-color: rgb(250, 55, 55);
 }
 
 .cart-btn:hover {
@@ -285,6 +283,7 @@ input, textarea {
   max-width: 50%;
   height: auto;
   margin: 0 auto;
+  margin-bottom: 1rem;
 }
 
 .modal-thumbnail {
