@@ -12,18 +12,26 @@ export const CartProvider = ({ children }) => {
         return cartJson ? JSON.parse(cartJson) : [];
     })
 
+  
     const addToCart = (item) => {
-        const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
+    const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
+
     if (isItemInCart) {
-      setCartItems(
-        cartItems.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
-        )
-      );
+      if (isItemInCart.quantity < item.stock) {
+        setCartItems(
+          cartItems.map((cartItem) =>
+            cartItem.id === item.id
+              ? { ...cartItem, quantity: cartItem.quantity + 1 }
+              : cartItem
+          )
+        );
+      } else {
+        alert(`Cannot add more than ${item.stock} of this item to the cart.`);
+      }
     } else {
-      setCartItems([...cartItems, { ...item, quantity: 1 }]);
+      if (item.stock > 0) {
+        setCartItems([...cartItems, { ...item, quantity: 1 }]);
+      }
     }
   };
 
